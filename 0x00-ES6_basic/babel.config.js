@@ -1,5 +1,3 @@
-Explain
-
 module.exports = {
   presets: [
     [
