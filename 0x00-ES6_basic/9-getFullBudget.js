@@ -4,12 +4,10 @@ export default function getFullBudgetObject(income, gdp, capita) {
   const budget = getBudgetObject(income, gdp, capita);
   const fullBudget = {
     ...budget,
-    getIncomeInDollars(income) {
-      return `$${income}`;
-    },
-    getIncomeInEuros(income) {
-      return `${income} euros`;
-    },
+    // First way to declare a method in object
+    getIncomeInDollars(income) { return `$${income}`; },
+    // second way to declare a method in object
+    getIncomeInEuros: (income) => `${income} euros`,
   };
 
   return fullBudget;
