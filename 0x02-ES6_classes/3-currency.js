@@ -23,7 +23,7 @@ class Currency {
   }
 
   get name() {
-    return this._code;
+    return this._name;
   }
 
   set name(newName) {
