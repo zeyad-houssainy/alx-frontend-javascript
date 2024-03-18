@@ -13,7 +13,11 @@ class Building {
   constructor(sqft) {
     Building.checker(sqft, 'number');
     this._sqft = sqft;
-    this.evacuationWarningMessage = () => {};
+    // check if constructor is the class itself 
+    // check if method is not overriden
+    if ((this.constructor === Building) || (this.evacuationWarningMessage === undefined)) {
+      throw new Error('Class extending Building must override evacuationWarningMessage');
+    }
   }
 
   get sqft() {
